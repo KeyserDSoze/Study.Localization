@@ -6,7 +6,7 @@ namespace Localization.RazorLibrary
     {
         public static IServiceCollection AddLibraryLocalization(this IServiceCollection services)
         {
-            services.AddGreaterLocalization(x =>
+            services.AddMultipleLocalization(x =>
             {
                 x.ResourcesPath = string.Empty;
             });
