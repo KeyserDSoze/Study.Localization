@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Localization.RazorLibrary.Resources;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Localization.RazorLibrary
 {
@@ -6,7 +7,7 @@ namespace Localization.RazorLibrary
     {
         public static IServiceCollection AddLibraryLocalization(this IServiceCollection services)
         {
-            services.AddMultipleLocalization(x =>
+            services.AddMultipleLocalization<Shared>(x =>
             {
                 x.ResourcesPath = string.Empty;
             });

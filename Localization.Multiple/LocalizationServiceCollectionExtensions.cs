@@ -4,6 +4,7 @@
 using System;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Globalization;
+using Microsoft.Extensions.Options;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
@@ -17,7 +18,7 @@ public static class LocalizationServiceCollectionExtensions
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
     /// <returns>The <see cref="IServiceCollection"/> so that additional calls can be chained.</returns>
-    public static IServiceCollection AddMultipleLocalization(this IServiceCollection services)
+    public static IServiceCollection AddMultipleLocalization<T>(this IServiceCollection services)
     {
         if (services == null)
         {
@@ -26,7 +27,10 @@ public static class LocalizationServiceCollectionExtensions
 
         services.AddOptions();
 
-        AddLocalizationServices(services);
+        AddLocalizationServices<T>(services, x =>
+        {
+            x.ResourcesPath = string.Empty;
+        });
 
         return services;
     }
@@ -39,9 +43,9 @@ public static class LocalizationServiceCollectionExtensions
     /// An <see cref="Action{LocalizationOptions}"/> to configure the <see cref="LocalizationOptions"/>.
     /// </param>
     /// <returns>The <see cref="IServiceCollection"/> so that additional calls can be chained.</returns>
-    public static IServiceCollection AddMultipleLocalization(
+    public static IServiceCollection AddMultipleLocalization<T>(
         this IServiceCollection services,
-        Action<LocalizationOptions> setupAction)
+        Action<MultipleLocalizationOptions> setupAction)
     {
         if (services == null)
         {
@@ -53,23 +57,22 @@ public static class LocalizationServiceCollectionExtensions
             throw new ArgumentNullException(nameof(setupAction));
         }
 
-        AddLocalizationServices(services, setupAction);
+        AddLocalizationServices<T>(services, setupAction);
 
         return services;
     }
-
-    // To enable unit testing
-    internal static void AddLocalizationServices(IServiceCollection services)
+    internal static void AddLocalizationServices<T>(
+        IServiceCollection services,
+        Action<MultipleLocalizationOptions> setupAction)
     {
         services.AddTransient<IStringLocalizerFactory, ResourceManagerStringLocalizerFactory>();
         services.AddTransient(typeof(IStringLocalizer<>), typeof(MultipleStringLocalizer<>));
-    }
-
-    internal static void AddLocalizationServices(
-        IServiceCollection services,
-        Action<LocalizationOptions> setupAction)
-    {
-        AddLocalizationServices(services);
-        services.Configure(setupAction);
+        services.AddSingleton<IStringLocalizerFactory, MultipleResourceManagerStringLocalizerFactory>();
+        var m = new MultipleLocalizationOptions
+        {
+            FullNameAssembly = typeof(T).Assembly.GetName().Name
+        };
+        setupAction?.Invoke(m);
+        services.AddSingleton(m);
     }
 }
