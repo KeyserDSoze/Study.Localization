@@ -1,15 +1,10 @@
-// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-
-using System;
-using System.Collections.Concurrent;
-using System.IO;
-using System.Reflection;
-using System.Resources;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using System.Collections.Concurrent;
+using System.Reflection;
+using System.Resources;
 
-namespace Microsoft.Extensions.Globalization;
+namespace Microsoft.Extensions.Localization;
 
 /// <summary>
 /// An <see cref="IStringLocalizerFactory"/> that creates instances of <see cref="ResourceManagerStringLocalizer"/>.
@@ -33,7 +28,7 @@ public class MultipleResourceManagerStringLocalizerFactory : IStringLocalizerFac
     /// <param name="localizationOptions">The <see cref="IOptions{LocalizationOptions}"/>.</param>
     /// <param name="loggerFactory">The <see cref="ILoggerFactory"/>.</param>
     public MultipleResourceManagerStringLocalizerFactory(
-        IEnumerable<MultipleLocalizationOptions> localizationOptions,
+        MultipleLocalizationOptions localizationOptions,
         ILoggerFactory loggerFactory)
     {
         if (localizationOptions == null)
@@ -46,7 +41,7 @@ public class MultipleResourceManagerStringLocalizerFactory : IStringLocalizerFac
             throw new ArgumentNullException(nameof(loggerFactory));
         }
 
-        _resourcesRelativePath = localizationOptions.First().ResourcesPath ?? string.Empty;
+        _resourcesRelativePath = localizationOptions.ResourcesPath ?? string.Empty;
         _loggerFactory = loggerFactory;
 
         if (!string.IsNullOrEmpty(_resourcesRelativePath))
