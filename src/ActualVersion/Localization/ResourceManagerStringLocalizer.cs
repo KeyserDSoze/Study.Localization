@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Resources;
 using Microsoft.Extensions.Logging;
 
-namespace Microsoft.Extensions.Globalization;
+namespace Microsoft.Extensions.Localization;
 
 /// <summary>
 /// An <see cref="IStringLocalizer"/> that uses the <see cref="ResourceManager"/> and

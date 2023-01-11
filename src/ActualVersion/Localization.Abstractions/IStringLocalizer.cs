@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Microsoft.Extensions.Globalization;
+namespace Microsoft.Extensions.Localization;
 
 /// <summary>
 /// Represents a service that provides localized strings.

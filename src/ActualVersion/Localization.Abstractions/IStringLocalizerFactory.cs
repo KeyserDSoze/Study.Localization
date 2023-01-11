@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Microsoft.Extensions.Globalization;
+namespace Microsoft.Extensions.Localization;
 
 /// <summary>
 /// Represents a factory that creates <see cref="IStringLocalizer"/> instances.

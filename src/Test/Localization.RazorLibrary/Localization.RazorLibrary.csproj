@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Localization.Multiple\Localization.Multiple.csproj" />
+    <ProjectReference Include="..\..\NewVersion\Localization.Multiple\Localization.Multiple.csproj" />
   </ItemGroup>
 
   <ItemGroup>

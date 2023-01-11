@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Microsoft.Extensions.Globalization;
+namespace Microsoft.Extensions.Localization;
 
 /// <summary>
 /// Represents a cache of string names in resources.

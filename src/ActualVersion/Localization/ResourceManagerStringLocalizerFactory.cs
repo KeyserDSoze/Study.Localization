@@ -9,7 +9,7 @@ using System.Resources;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Microsoft.Extensions.Globalization;
+namespace Microsoft.Extensions.Localization;
 
 /// <summary>
 /// An <see cref="IStringLocalizerFactory"/> that creates instances of <see cref="ResourceManagerStringLocalizer"/>.

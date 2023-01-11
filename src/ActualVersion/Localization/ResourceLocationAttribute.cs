@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Microsoft.Extensions.Globalization;
+namespace Microsoft.Extensions.Localization;
 
 /// <summary>
 /// Provides the location of resources for an Assembly.

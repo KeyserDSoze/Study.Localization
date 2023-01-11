@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Microsoft.Extensions.Globalization;
+namespace Microsoft.Extensions.Localization;
 
 /// <summary>
 /// Provides the RootNamespace of an Assembly. The RootNamespace of the assembly is used by Localization to

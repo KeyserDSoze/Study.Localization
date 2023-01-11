@@ -3,15 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Localization", "Localization\Localization.csproj", "{382D937F-636B-4541-ADC4-C06568B82851}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Localization", "src\ActualVersion\Localization\Localization.csproj", "{382D937F-636B-4541-ADC4-C06568B82851}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalizationApp", "LocalizationApp\LocalizationApp.csproj", "{A4912BAC-5978-4758-AA36-42FD7C250B1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocalizationApp", "src\Test\LocalizationApp\LocalizationApp.csproj", "{A4912BAC-5978-4758-AA36-42FD7C250B1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Localization.RazorLibrary", "Localization.RazorLibrary\Localization.RazorLibrary.csproj", "{6AA79410-96D2-4EC5-AB8B-2C16EF50CECF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Localization.RazorLibrary", "src\Test\Localization.RazorLibrary\Localization.RazorLibrary.csproj", "{6AA79410-96D2-4EC5-AB8B-2C16EF50CECF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Localization.Abstractions", "Localization.Abstractions\Localization.Abstractions.csproj", "{CACE523C-A208-4A83-BEBD-A679A0890599}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Localization.Abstractions", "src\ActualVersion\Localization.Abstractions\Localization.Abstractions.csproj", "{CACE523C-A208-4A83-BEBD-A679A0890599}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Localization.Multiple", "Localization.Multiple\Localization.Multiple.csproj", "{5A223A32-D3B9-4FB1-887A-443A33C13AA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Localization.Multiple", "src\NewVersion\Localization.Multiple\Localization.Multiple.csproj", "{5A223A32-D3B9-4FB1-887A-443A33C13AA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ActualVersion", "ActualVersion", "{2FB5B338-651B-4650-AD54-9878C71CE060}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewVersion", "NewVersion", "{3A6EF80F-5999-4F9C-ACDD-85D5BF9B6AF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{C075484E-EFDE-4CEB-8C03-B9DEC329127F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +48,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{382D937F-636B-4541-ADC4-C06568B82851} = {2FB5B338-651B-4650-AD54-9878C71CE060}
+		{A4912BAC-5978-4758-AA36-42FD7C250B1F} = {C075484E-EFDE-4CEB-8C03-B9DEC329127F}
+		{6AA79410-96D2-4EC5-AB8B-2C16EF50CECF} = {C075484E-EFDE-4CEB-8C03-B9DEC329127F}
+		{CACE523C-A208-4A83-BEBD-A679A0890599} = {2FB5B338-651B-4650-AD54-9878C71CE060}
+		{5A223A32-D3B9-4FB1-887A-443A33C13AA6} = {3A6EF80F-5999-4F9C-ACDD-85D5BF9B6AF6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9B60EDE1-9ED4-438B-BE23-10215B2E6FFE}

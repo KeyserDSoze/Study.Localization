@@ -7,7 +7,7 @@ using System.Globalization;
 using System.Reflection;
 using System.Resources;
 
-namespace Microsoft.Extensions.Globalization;
+namespace Microsoft.Extensions.Localization;
 
 /// <summary>
 /// This API supports infrastructure and is not intended to be used

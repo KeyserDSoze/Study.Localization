@@ -3,7 +3,7 @@
 
 using System;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Globalization;
+using Microsoft.Extensions.Localization;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
