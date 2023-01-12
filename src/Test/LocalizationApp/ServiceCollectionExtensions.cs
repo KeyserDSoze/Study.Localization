@@ -1,4 +1,6 @@
-﻿namespace LocalizationApp
+﻿using LocalizationApp.Resources;
+
+namespace LocalizationApp
 {
     public static class ServiceCollectionExtensions
     {
@@ -6,12 +8,13 @@
         {
             services.AddMultipleLocalization<Shared2>(x =>
             {
-                x.ResourcesPath = "Resources";
+                //x.ResourcesPath = string.Empty;
             });
-            //services.AddLocalization(x =>
-            //{
-            //    x.ResourcesPath = "Resources";
-            //});
+            services.AddLocalization(x =>
+            {
+                //    x.ResourcesPath = "Resources";
+                x.ResourcesPath = string.Empty;
+            });
             return services;
         }
     }

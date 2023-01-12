@@ -1,4 +1,4 @@
-﻿namespace LocalizationApp
+﻿namespace LocalizationApp.Resources
 {
     public class Shared2
     {
